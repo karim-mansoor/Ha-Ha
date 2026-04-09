@@ -1,0 +1,328 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ---------------- HERO CONTAINER ---------------- */
+.hero_contaner {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+
+/* ---------------- DISCOUNTED PRODUCTS ---------------- */
+.discounted_products {
+  margin-top: 1.5%;
+  display: block;
+}
+
+.first_product_grid {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  padding-top: 125px;
+  margin-bottom: 1.5%;
+}
+
+.discount_text {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0a2c3d;
+  margin-right: auto;
+  align-self: center;
+  margin-top: 10px;
+}
+
+/* ---------------- BUTTON ---------------- */
+.product_btn {
+  height: 54px;
+  padding: 0 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  border: 1px solid #071c1f;
+  background: transparent;
+  color: #071c1f;
+
+  margin-left: auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product_btn span {
+  font-size: 20px;
+  line-height: 0;
+  transition: transform 0.25s ease;
+}
+
+.product_btn:hover {
+  background-color: #071c1f;
+  color: #fff;
+}
+
+.product_btn:hover span {
+  transform: translateX(5px);
+}
+
+/* ---------------- PRODUCT GRID ---------------- */
+.discounted_products_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 70%;
+  margin: 0 auto 3%;
+  padding-bottom: 30px;
+}
+
+// /* ✅ RESPONSIVE GRID — SAME DESIGN, JUST ADAPTS */
+// @media (max-width: 1200px) {
+//   .discounted_products_cards {
+//     grid-template-columns: repeat(3, 1fr);
+//     width: 90%;
+//   }
+
+//   .first_product_grid {
+//     width: 90%;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .discounted_products_cards {
+//     grid-template-columns: repeat(2, 1fr);
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .discounted_products_cards {
+//     grid-template-columns: 1fr;
+//   }
+// }
+
+// /* ---------------- CONTACT ---------------- */
+// .contact_us {
+//   // margin: 3% 0;
+//   background-color: rgba(255, 255, 255, 0.5);
+//   width: 100%;
+//   // margin: 0 auto;
+// }
+// .contact_us_card
+// {
+//   width: 70%;
+//   margin: 0 auto;
+//   // background-color: #071c1f;
+// }
+// /* ✅ RESPONSIVE FIX — THIS WAS THE GOAL */
+// @media (max-width: 1200px) {
+//   .hero_contaner {
+//     max-width: 1100px;
+//     padding: 0 20px;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .hero_contaner {
+//     max-width: 100%;
+//     padding: 0 16px;
+//   }
+// }
+// service section 
+.services_section 
+{
+  padding: 80px 0;
+  background-color: #f8fbff; /* Match your hero color */
+  width: 70%;
+  margin: 0 auto ;
+
+}
+.services_grid 
+{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 70%;
+  margin: 0 auto;
+  gap: 30px;
+}
+.service_card 
+{
+  text-align: center;
+  padding: 40px 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+.service_card:hover 
+{
+   transform: translateY(-10px); 
+
+}
+.service_icon {
+  font-size: 40px;
+  color: #2dbccb; /* Your accent teal */
+  margin-bottom: 20px;
+}
+.service_card h3 { color: #0a2c3d; margin-bottom: 15px; }
+.service_card p { color: #4A5D6A; line-height: 1.6; }
+
+
+
+// -------------------------------------------
+// 
+.support_cta {
+  width: 70%;
+  max-width: 1200px;
+  margin: 80px auto;
+  // Deep medical teal gradient from your image
+  background: linear-gradient(180deg, #0a5d71 0%, #1e90a8 100%);
+  padding: 80px 40px;
+  border-radius: 30px; // Smooth rounded corners
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(10, 93, 113, 0.2);
+
+  h2 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    max-width: 600px;
+  }
+
+  p {
+    font-size: 22px;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    max-width: 500px;
+    line-height: 1.5;
+  }
+
+  /* Fixed Contact Button to match screenshot */
+  .contact_expert_btn {
+    background: #ffffff;
+    color: #0d233e; // Dark navy text
+    padding: 20px 40px;
+    border-radius: 4px; // Sharp professional corners or slight radius
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    min-width: 280px;
+
+    span {
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      
+      span {
+        transform: translateX(8px);
+      }
+    }
+  }
+}
+
+// ---------------------------------
+/* ===================================================
+   MOBILE & TABLET RESPONSIVENESS
+   =================================================== */
+
+@media (max-width: 768px) {
+  .services_grid { grid-template-columns: 1fr; width: 90%; }
+}
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1200px) {
+    .first_product_grid, 
+    .discounted_products_cards {
+        width: 90%; /* Expand width to use more screen space */
+    }
+}
+
+/* Tablets & Large Phones */
+@media (max-width: 768px) {
+    .first_product_grid {
+        padding-top: 60px; /* Reduce large gap at the top */
+        flex-direction: column; /* Stack text and button */
+        gap: 20px;
+        text-align: center;
+    }
+
+    .discount_text {
+        margin-right: 0;
+        font-size: 24px;
+    }
+
+    .product_btn {
+        margin-left: 0; 
+        width: 100%;    
+        text-align: center;
+    }
+
+    .discounted_products_cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 products per row */
+        width: 95%;
+        gap: 15px;
+    }
+    .support_cta {
+    width: 95%;
+    padding: 60px 20px;
+    margin: 40px auto;
+    border-radius: 20px;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .contact_expert_btn {
+      width: 100%; // Full width on mobile for better touch target
+      padding: 18px 20px;
+      font-size: 16px;
+      flex-direction: row; // Keeps arrow on the side
+      justify-content: space-between; // Space between text and arrow
+    }
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .discount_text {
+        font-size: 22px;
+    }
+
+    .discounted_products_cards {
+        grid-template-columns: 1fr; /* 1 product per row for clarity */
+    }
+
+    .first_product_grid {
+        padding-top: 40px;
+    }
+}

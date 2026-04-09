@@ -1,0 +1,23 @@
+
+<div class="card_container" >
+    <div class="product_image">
+        <span class="discount_badge">40% Off</span>
+       <img [src]="Api + device.images" [alt]="device.name">
+    </div>
+
+
+    <div class="product_details">
+        <h3 class="product_name">
+            {{device.name}} <br>
+
+        </h3>
+
+        <div class="product_price">
+            <span class="price_new">{{device.price}}€</span>
+            <span class="price_old">{{device.price * 1.5}}</span>
+        </div>
+       
+        <button class="add_to_cart" (click)="onContactClick()">Contact _US</button>
+    </div>
+</div>
+

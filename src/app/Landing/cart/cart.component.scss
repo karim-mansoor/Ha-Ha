@@ -1,0 +1,115 @@
+.cart_container {
+    width: 70%;
+    margin: 0 auto;
+    // font-family: 'Segoe UI', sans-serif;
+    margin-top: 3%;
+}
+
+.cart_header_grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.cart_info_text span { color: #888; }
+.cart_total_top span { color: #d9534f; font-size: 1.2rem; }
+
+/* Table Styling */
+.cart_table_wrapper {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.cart_table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.cart_table thead {
+    background-color: #f8faff;
+    border-bottom: 1px solid #eee;
+}
+
+.cart_table th {
+    padding: 15px;
+    color: #102A43;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+
+.cart_table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+/* Product Column */
+.product_cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.product_cell img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+}
+
+.product_name { font-weight: 600; color: #102A43; }
+
+/* Inputs & Buttons */
+.qty_input {
+    width: 50px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.remove_btn {
+    background: transparent;
+    border: 1px solid #ddd;
+    color: #ccc;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.remove_btn:hover { color: #d9534f; border-color: #d9534f; }
+
+/* Bottom Grid */
+.cart_actions_grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.coupon_input {
+    padding: 12px;
+    border: 1px solid #eee;
+    width: 250px;
+}
+
+.apply_btn, .update_btn, .checkout_btn {
+    padding: 12px 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #102A43;
+}
+
+.apply_btn { background: #f8faff; color: #102A43; }
+.update_btn { background: #0a1b2b; color: #fff; }
+.checkout_btn { background: #fff; color: #102A43; }
+
+.checkout_btn:hover { background: #102A43; color: #fff; }

@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="cart_container">
+        <div class="cart_header_grid">
+            <p class="cart_info_text">{{ translationService.translate('YOUR_CART') }}: <span>3 {{ translationService.translate('ITEMS') }}</span></p>
+            <p class="cart_total_top">{{ translationService.translate('TOTAL') }}: <span>$15,797</span></p>
+        </div>
+
+        <div class="cart_table_wrapper">
+            <table class="cart_table">
+                <thead>
+                    <tr>
+                        <th class="col_product">{{ translationService.translate('COL_PRODUCT') }}</th>
+                        <th class="col_qty">{{ translationService.translate('COL_QTY') }}</th>
+                        <th class="col_price">{{ translationService.translate('COL_PRICE') }}</th>
+                        <th class="col_total">{{ translationService.translate('COL_TOTAL') }}</th>
+                        <th class="col_remove">{{ translationService.translate('COL_REMOVE') }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="product_cell">
+                            <img src="asset/Pngs/product/perfusor-space.jpeg" alt="Product">
+                            <span class="product_name">perfusor-space</span>
+                        </td>
+                        <td><input type="number" class="qty_input" value="2"></td>
+                        <td class="price_text">$23.99</td>
+                        <td class="total_text">$47.98</td>
+                        <td><button class="remove_btn">×</button></td>
+                    </tr>
+                    <tr>
+                        <td class="product_cell">
+                            <img src="asset/Pngs/product/perfusor-space.jpeg" alt="Product">
+                            <span class="product_name">perfusor-space</span>
+                        </td>
+                        <td><input type="number" class="qty_input" value="2"></td>
+                        <td class="price_text">$23.99</td>
+                        <td class="total_text">$47.98</td>
+                        <td><button class="remove_btn">×</button></td>
+                    </tr>
+                    <tr>
+                        <td class="product_cell">
+                            <img src="asset/Pngs/product/perfusor-space.jpeg" alt="Product">
+                            <span class="product_name">perfusor-space</span>
+                        </td>
+                        <td><input type="number" class="qty_input" value="2"></td>
+                        <td class="price_text">$23.99</td>
+                        <td class="total_text">$47.98</td>
+                        <td><button class="remove_btn">×</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart_actions_grid">
+            <div class="coupon_section">
+                <input type="text" class="coupon_input" [placeholder]="translationService.translate('COUPON_PLACEHOLDER')">
+                <button class="apply_btn">{{ translationService.translate('APPLY') }}</button>
+            </div>
+            <div class="checkout_section">
+                <button class="update_btn">{{ translationService.translate('UPDATE_CART') }}</button>
+                <button class="checkout_btn">{{ translationService.translate('CHECKOUT') }}</button>
+            </div>
+        </div>
+    </div>
+</div>

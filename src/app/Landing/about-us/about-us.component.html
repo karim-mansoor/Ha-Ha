@@ -1,0 +1,143 @@
+<section class="shop_hero">
+  <div class="shape_medical_bg"></div>
+
+  <div class="doctor_wrap">
+    <img src="asset/header_page/breadcrumb-img1.png" [alt]="translationService.translate('ABOUT_TITLE')" class="doctor_img">
+  </div>
+
+  <img src="asset/header_page/breadcrumb-shape3.png" class="shape shape_circle_right_corner" />
+  <img src="asset/header_page/breadcrumb-shape1.png" class="shape shape_dots_left" />
+
+  <span class="shape ring yellow"></span>
+  <span class="shape ring purple"></span>
+  <span class="shape solid_circle_teal"></span>
+
+  <div class="hero_content">
+    <h1>{{ translationService.translate('ABOUT_TITLE') }}</h1>
+    <div class="breadcrumb">
+      <a routerLink="/">
+        <i class="fa-solid fa-house home-icon"></i> {{ translationService.translate('HOME') }}
+      </a>
+      <span class="divider">/</span>
+      <span class="active">{{ translationService.translate('ABOUT_TITLE') }}</span>
+    </div>
+  </div>
+
+  <div class="hero_image">
+    <img src="asset/header_page/breadcrumb-shape2.png" alt="Stethoscope">
+  </div>
+</section>
+
+<section class="about-main">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <span class="eyebrow">{{ translationService.translate('ABOUT_SUBTITLE') }}</span>
+        <h2 class="section-title">{{ translationService.translate('ABOUT_MAIN_TITLE') }}</h2>
+        <p class="lead-text">
+          {{ translationService.translate('ABOUT_LEAD') }}
+        </p>
+        <p class="body-text">
+          {{ translationService.translate('ABOUT_DESC') }}
+        </p>
+        <div class="services-list">
+          <div class="service-item">
+            <i class="fa-solid fa-cart-shopping service-icon"></i>
+            <div>
+              <h4>{{ translationService.translate('SERVICE_SALES_TITLE') }}</h4>
+              <p>{{ translationService.translate('SERVICE_SALES_DESC') }}</p>
+            </div>
+          </div>
+          <div class="service-item">
+            <i class="fa-solid fa-screwdriver-wrench service-icon"></i>
+            <div>
+              <h4>{{ translationService.translate('SERVICE_REPAIR_TITLE') }}</h4>
+              <p>{{ translationService.translate('SERVICE_REPAIR_DESC') }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="image-stack">
+          <img src="asset/Pngs/product/perfusor-space.jpeg" alt="Medical Device" class="img-large">
+          <img src="asset/Pngs/product/perfusor-space.jpeg" alt="Device Repair" class="img-small">
+          <div class="badge-overlay">
+            <i class="fa-solid fa-tools"></i>
+            <span>{{ translationService.translate('BADGE_REPAIR') }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{{ translationService.translate('WHAT_WE_DO') }}</span>
+      <h2 class="section-title">{{ translationService.translate('WHAT_WE_DO_TITLE') }}</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <i class="fa-solid fa-stethoscope"></i>
+        </div>
+        <h3>{{ translationService.translate('CARD_SALES_TITLE') }}</h3>
+        <p>{{ translationService.translate('CARD_SALES_DESC') }}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <i class="fa-solid fa-wrench"></i>
+        </div>
+        <h3>{{ translationService.translate('CARD_REPAIR_TITLE') }}</h3>
+        <p>{{ translationService.translate('CARD_REPAIR_DESC') }}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <i class="fa-solid fa-gauge"></i>
+        </div>
+        <h3>{{ translationService.translate('CARD_CALIBRATION_TITLE') }}</h3>
+        <p>{{ translationService.translate('CARD_CALIBRATION_DESC') }}</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <i class="fa-solid fa-truck"></i>
+        </div>
+        <h3>{{ translationService.translate('CARD_DELIVERY_TITLE') }}</h3>
+        <p>{{ translationService.translate('CARD_DELIVERY_DESC') }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">{{ translationService.translate('WHY_CHOOSE') }}</span>
+      <h2 class="section-title">{{ translationService.translate('WHY_TITLE') }}</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item" *ngFor="let key of ['WHY_1', 'WHY_2', 'WHY_3', 'WHY_4', 'WHY_5', 'WHY_6']">
+        <span class="check-mark">✓</span>
+        <span>{{ translationService.translate(key) }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>{{ translationService.translate('CTA_TITLE') }}</h2>
+      <p>{{ translationService.translate('CTA_DESC') }}</p>
+      <div class="cta-buttons">
+        <a routerLink="/products" class="btn btn-primary">
+          {{ translationService.translate('CTA_BTN_SHOP') }}
+        </a>
+        <a routerLink="/contact" class="btn btn-secondary">
+          {{ translationService.translate('CTA_BTN_REPAIR') }}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

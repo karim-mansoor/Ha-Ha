@@ -1,1 +1,113 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global resets to remove default gaps and ensure full-height layout */
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* Ensure consistent box sizing */
+* {
+	box-sizing: border-box;
+}
+
+/* You can add other global styles or imports below */
+:root {
+  /* Brand */
+  --primary-blue: #0A3D62;
+  --secondary-blue: #1E90A8;
+  --accent-teal: #2EC4B6;
+
+  /* Backgrounds */
+  --bg-main: #F7FAFC;
+  --bg-white: #FFFFFF;
+  --bg-dark: #0F2A33;
+
+  /* Text */
+  --text-heading: #0B1F2A;
+  --text-body: #4A5D6A;
+  --text-muted: #8FA3AD;
+
+  /* Prices */
+  --price-main: #0A3D62;
+  --price-old: #9FB1BB;
+
+  /* Danger / Discount */
+  --medical-red: #E63946;
+}
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-body);
+}
+
+h1, h2, h3, h4, h5 {
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+a {
+  color: var(--secondary-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Backgrounds */
+.bg-main { background: var(--bg-main); }
+.bg-white { background: var(--bg-white); }
+.bg-dark { background: var(--bg-dark); }
+
+/* Text */
+.text-heading { color: var(--text-heading); }
+.text-body { color: var(--text-body); }
+.text-muted { color: var(--text-muted); }
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary-blue);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #082F4A;
+}
+
+.btn-secondary {
+  border: 1.5px solid var(--secondary-blue);
+  color: var(--secondary-blue);
+  background: transparent;
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-blue);
+  color: #fff;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-white);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+//import font 
+@font-face {
+  font-family: Roboto;
+  src: url(asset/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf) format("truetype");
+  font-weight: 100 900;
+
+}
+body {
+  font-family: Roboto;
+}
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";

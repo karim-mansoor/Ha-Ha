@@ -1,0 +1,85 @@
+<section class="shop_hero">
+  <div class="shape_medical_bg"></div>
+  <div class="doctor_wrap">
+    <img src="asset/header_page/breadcrumb-img1.png" alt="Doctor" class="doctor_img">
+  </div>
+  <img src="asset/header_page/breadcrumb-shape3.png" class="shape shape_circle_right_corner" />
+  <img src="asset/header_page/breadcrumb-shape1.png" class="shape shape_dots_left" />
+  <span class="shape ring yellow"></span>
+  <span class="shape ring purple"></span>
+  <span class="shape solid_circle_teal"></span>
+
+  <div class="hero_content">
+    <h1>{{ translationService.translate('SHOP_TITLE') }}</h1>
+    <div class="breadcrumb">
+      <a routerLink="/"><i class="fa-solid fa-house home-icon"></i> {{ translationService.translate('HOME') }}</a>
+      <span class="divider">/</span>
+      <span class="active">{{ translationService.translate('SHOP_TITLE') }}</span>
+    </div>
+  </div>
+
+  <div class="hero_image">
+    <img src="asset/header_page/breadcrumb-shape2.png" alt="Stethoscope">
+  </div>
+</section>
+
+<div class="container">
+  <div class="header_product">
+    <div class="filter_grid">
+      <i class="fa-solid fa-sliders"></i>
+      <p>{{ translationService.translate('FILTER_SORT') }}</p>
+    </div>
+
+    <div class="showing_grid">
+      <p *ngIf="filteredDevices.length > 0">
+        Showing {{ (currentPage - 1) * itemsPerPage + 1 }}–{{ (currentPage - 1) * itemsPerPage + paginatedDevices.length }} of {{ filteredDevices.length }}
+      </p>
+    </div>
+
+    <div class="category_list">
+      <i class="fa-solid fa-layer-group"></i>
+      <p>{{ translationService.translate('CATEGORY') }}:</p>
+      <select class="select_option" [(ngModel)]="selectedCategory">
+        <option value="all">{{ translationService.translate('ALL') }}</option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+    </div>
+
+    <div class="sort_by">
+      <i class="fa-solid fa-building-medical"></i>
+      <p>{{ translationService.translate('COMPANY') }}:</p>
+      <select class="select_option" [(ngModel)]="selectedcompany">
+        <option value="all">{{ translationService.translate('ALL') }}</option>
+        <option *ngFor="let com of companies" [value]="com">{{ com }}</option>
+      </select>
+    </div>
+
+    <div class="search_bar">
+      <div class="search_input_wrapper">
+        <input type="text" [(ngModel)]="searchQuery" (input)="onSearch()" [placeholder]="'Search ...'" />
+        <i *ngIf="!searchQuery" class="fa-solid fa-magnifying-glass search_icon"></i>
+        <i *ngIf="searchQuery" class="fa-solid fa-xmark clear_icon" (click)="searchQuery = ''; onSearch()"></i>
+      </div>
+    </div>
+
+    <div class="display_grid" (click)="toggleGrid()">
+      <img class="grid_icon" src="asset/Pngs/4grids.png">
+    </div>
+  </div>
+
+  <div class="products_list" [class.grid-two]="!isFullGrid" [@listAnimation]="paginatedDevices.length">
+    <app-product-card *ngFor="let device of paginatedDevices" [device]="device"></app-product-card>
+  </div>
+
+  <div class="pagination_container" *ngIf="totalPages > 1">
+    <button class="pag_btn" (click)="previousPage()" [disabled]="currentPage === 1">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button *ngFor="let page of pages" class="pag_number" [class.active]="currentPage === page" (click)="goToPage(page)">
+      {{ page }}
+    </button>
+    <button class="pag_btn" (click)="nextPage()" [disabled]="currentPage === totalPages">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

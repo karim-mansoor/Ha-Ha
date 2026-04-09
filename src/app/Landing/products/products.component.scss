@@ -1,0 +1,257 @@
+.shop_hero {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    background-color: #f8fbff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    .shape_medical_bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 45%;
+        height: 100%;
+        opacity: 0.12;
+        z-index: 1;
+    }
+
+    .doctor_wrap {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        z-index: 2;
+        .doctor_img { height: 100%; object-fit: contain; }
+    }
+}
+
+/* --- DECORATIVE SHAPES --- */
+.shape {
+    position: absolute;
+    z-index: 3;
+    animation: floatInfinite 6s ease-in-out infinite;
+}
+
+.shape_circle_right_corner { width: 225px; right: 8%; top: 35%; opacity: 0.6; animation-duration: 8s; }
+.shape_dots_left { left: 13%; top: 20%; opacity: 0.3; z-index: 0; }
+.solid_circle_teal { width: 60px; height: 60px; background: #3bb4c1; border-radius: 50%; right: 28%; top: 22%; opacity: 0.8; }
+
+.ring { 
+    width: 18px; height: 18px; border-radius: 50%; border: 3px solid; 
+    &.yellow { border-color: #f6c445; right: 15%; bottom: 20%; }
+    &.purple { border-color: #b46cff; right: 10%; top: 30%; }
+}
+
+@keyframes floatInfinite {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+}
+
+/* --- HERO CONTENT --- */
+.hero_content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+
+    h1 { font-size: 62px; font-weight: 800; color: #0d233e; margin: 0; }
+    
+    .breadcrumb {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: 500;
+
+        .home-icon { font-size: 26px; color: #0d233e; }
+        a { color: #0d233e; text-decoration: none; }
+        .active { color: #2dbccb; font-weight: 700; }
+        .divider { color: #888; }
+    }
+}
+
+.hero_image {
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    animation: floatInfinite 5s ease-in-out infinite;
+    img { max-width: 520px; }
+}
+
+/* --- MAIN CONTAINER & FILTERS --- */
+.container {
+    width: 100%;
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.header_product {
+    display: flex;
+    align-items: center;
+    background-color: #f8fbff;
+    width: 70%;
+    padding: 15px 25px;
+    justify-content: space-between;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 1px solid #eef2f6;
+    gap: 15px;
+}
+
+.filter_grid, .category_list, .sort_by {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #0d233e;
+    font-weight: 500;
+    white-space: nowrap;
+
+    i { color: #2dbccb; font-size: 16px; }
+}
+
+.select_option {
+    border: 1px solid #dce4ec;
+    border-radius: 5px;
+    padding: 6px 12px;
+    background: white;
+    outline: none;
+    color: #444;
+    cursor: pointer;
+    &:focus { border-color: #2dbccb; }
+}
+
+/* --- SEARCH BAR --- */
+.search_bar {
+    flex: 1;
+    max-width: 300px;
+
+    .search_input_wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            border: 1px solid #e1e8ed;
+            border-radius: 20px;
+            font-size: 14px;
+            transition: all 0.3s;
+            &:focus { border-color: #2dbccb; box-shadow: 0 4px 12px rgba(45, 188, 203, 0.15); outline: none; }
+        }
+
+        .search_icon, .clear_icon {
+            position: absolute;
+            right: 15px;
+            font-size: 14px;
+        }
+        .clear_icon { color: #ff5e57; cursor: pointer; }
+    }
+}
+
+.display_grid .grid_icon {
+    width: 40px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    &:hover { transform: scale(1.1); }
+}
+
+/* --- PRODUCT LIST GRID --- */
+.products_list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 70%;
+    margin: 40px auto;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.grid-two {
+        grid-template-columns: repeat(2, 1fr);
+        width: 50%;
+        max-width: 800px;
+    }
+}
+
+/* --- PAGINATION --- */
+.pagination_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+
+    .pag_btn, .pag_number {
+        background: white;
+        border: 1px solid #e2e8f0;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: 0.2s;
+        color: #64748b;
+
+        &:hover:not(:disabled) { background-color: #f1f5f9; color: #2dbccb; }
+        &:disabled { opacity: 0.5; cursor: not-allowed; }
+        &.active { background: #2dbccb; color: white; border-color: #2dbccb; }
+    }
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1200px) {
+    .header_product, .products_list { width: 90%; }
+}
+
+@media (max-width: 768px) {
+    .header_product {
+        flex-direction: column;
+        width: 95%;
+        padding: 30px 20px;
+        gap: 25px; // Larger gap between stacked items
+        align-items: center;
+
+        /* Make every child take full width and center its content */
+        .filter_grid, 
+        .showing_grid, 
+        .category_list, 
+        .sort_by, 
+        .search_bar, 
+        .display_grid {
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Order adjustment: Search first, then Results, then Filters */
+        .search_bar { order: 1; max-width: 100%; }
+        .filter_grid { order: 2; border-top: 1px solid #eef2f6; padding-top: 15px; }
+        .showing_grid { order: 3; color: #888; font-size: 14px; }
+        .category_list { order: 4; }
+        .sort_by { order: 5; }
+        .display_grid { display: none; } // Toggles are usually confusing on mobile
+
+        /* Improve Select inputs on mobile */
+        .select_option {
+            flex: 1;
+            max-width: 200px; // Keeps them from being too wide
+            height: 45px; // Finger-friendly height
+        }
+    }
+
+    /* Product Grid: 1 column is usually better for medical cards on small mobile */
+    .products_list {
+        grid-template-columns: 1fr;
+        width: 95%;
+        gap: 20px;
+        
+        &.grid-two {
+            grid-template-columns: 1fr !important;
+        }
+    }
+
+}

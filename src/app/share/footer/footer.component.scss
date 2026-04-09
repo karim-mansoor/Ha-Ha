@@ -1,0 +1,229 @@
+
+
+.footer_container {
+  width: 100%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(247, 250, 252, 0.5);
+  color: #0a3d62;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* ---------------- COMPANY DETAILS ---------------- */
+.company_details 
+{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer_logo 
+{
+
+  cursor: pointer;
+  justify-content: flex-start;
+  // background-color: aqua;
+  
+}
+.footer_logo:hover
+{
+  transform: scale(1.03);
+}
+
+
+
+/* ---------------- CONTACT INFO ---------------- */
+// .contact_info {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 15px;
+// }
+
+// 
+
+// 
+
+/* ---------------- SOCIAL ---------------- */
+
+/* ---------------- FOOTER ---------------- */
+.footer_container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 40px;
+  padding: 60px 20px;
+  background-color: var(--bg-dark);
+  color: var(--text-body);
+  box-sizing: border-box;
+}
+
+.company_details {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer_logo {
+  max-width: 180px;
+  height: auto;
+  // background-color: aqua;
+
+}
+
+.company_description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #EAF4F8;
+  font-weight: 500;
+}
+
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info_item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.info_item svg {
+  fill: var(--accent-teal);
+  width: 20px;
+  height: 20px;
+}
+
+.info_item p {
+  margin: 0;
+  font-size: 18px;
+  color: #EAF4F8;
+}
+
+.social_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.social_links span {
+  color: #EAF4F8;
+  font-weight: 500;
+}
+
+.social_icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social_icon:hover {
+  background-color: var(--accent-teal);
+  transform: translateY(-3px) scale(1.1);
+}
+
+/* ---------------- COLUMNS ---------------- */
+.pages_column {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.column_title {
+  font-weight: bold;
+  font-size: 24px;
+  color: var(--accent-teal);
+  margin-bottom: 5px;
+}
+
+.company_line {
+  width: 50px;
+  height: 2px;
+  background-color: var(--accent-teal);
+  margin-bottom: 15px;
+}
+
+.column_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.column_list li a {
+  text-decoration: none;
+  color: #EAF4F8;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.column_list li a:hover {
+  color: var(--accent-teal);
+}
+
+.column_list li a::before {
+  content: "• ";
+  color: var(--accent-teal);
+  font-size: 18px;
+}
+
+/* ---------------- PIN ICON (MAP) ---------------- */
+.pin {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-teal);
+  border-radius: 50%;
+  margin: 50px auto;
+  box-shadow: 0 0 0 8px var(--bg-white) inset;
+}
+
+.pin::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -15px;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-teal);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1200px) {
+  .footer_container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .company_details, .pages_column {
+    width: 80%;
+    text-align: center;
+  }
+  .social_icons {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,34 @@
+<section class="shop_hero">
+  <div class="shape_medical_bg"></div>
+
+  <div class="doctor_wrap">
+    <img src="asset/header_page/breadcrumb-img1.png" alt="Doctor" class="doctor_img">
+  </div>
+
+  <img src="asset/header_page/breadcrumb-shape3.png" class="shape shape_circle_right_corner" />
+  <img src="asset/header_page/breadcrumb-shape1.png" class="shape shape_dots_left" />
+
+  <span class="shape ring yellow"></span>
+  <span class="shape ring purple"></span>
+  <span class="shape solid_circle_teal"></span>
+
+  <div class="hero_content">
+    <h1 class="hero_title">{{ translationService.translate('CONTACT_TITLE') }}</h1>
+    <div class="breadcrumb">
+      <a routerLink="/">
+        <i class="fa-solid fa-house home-icon"></i> {{ translationService.translate('HOME') }}
+      </a>
+      <span class="divider">/</span>
+      <span class="active">{{ translationService.translate('CONTACT_TITLE') }}</span>
+    </div>
+  </div>
+
+  <div class="hero_image">
+    <img src="asset/header_page/breadcrumb-shape2.png" alt="Stethoscope">
+  </div>
+</section>
+<div class="contact_us">
+  <div class="contact_us_card">
+    <app-contact-us-card></app-contact-us-card>
+  </div>
+</div>

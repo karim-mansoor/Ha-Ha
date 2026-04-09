@@ -1,0 +1,98 @@
+.card_container {
+    margin-top: 1.5%;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        transform: translateY(-3px);
+    }
+}
+
+/* IMAGE */
+.product_image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+    background: rgba(248,251,255, 0.05); 
+}
+
+.product_image img {
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+
+
+/* DISCOUNT BADGE */
+.discount_badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #E63946; /* medical red */
+    color: #fff;
+    font-size: 13px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+/* DETAILS */
+.product_details {
+    padding: 16px;
+    text-align: left;
+}
+
+.product_name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: var(--text-heading);
+}
+
+/* PRICE */
+.product_price {
+    margin-bottom: 14px;
+
+    .price_new {
+        color: var(--primary-blue);
+        font-size: 18px;
+        font-weight: 700;
+        margin-right: 10px;
+    }
+
+    .price_old {
+        color: var(--text-muted);
+        text-decoration: line-through;
+        font-size: 14px;
+    }
+}
+
+/* BUTTON */
+.add_to_cart {
+    width: 100%;
+    padding: 10px;
+    border: 1.5px solid var(--primary-blue);
+    background: var(--primary-blue);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: var(--accent-teal);
+        border-color: var(--accent-teal);
+        color: #fff;
+        transform: translateY(-2px);
+    }
+}

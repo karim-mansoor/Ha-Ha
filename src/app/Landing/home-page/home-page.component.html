@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="hero_contaner">
+    <app-hero></app-hero>
+  </div>
+
+  <div class="discounted_products">
+    <div class="first_product_grid">
+      <p class="discount_text">{{ translationService.translate('Products') }}</p>
+
+      <a class="product_btn" [routerLink]="'/products'">
+        {{ translationService.translate('Pruduct') }}
+        <span>→</span>
+      </a>
+    </div>
+
+    <div class="discounted_products_cards">
+      <app-product-card *ngFor="let item of DiscountedDevices" [device]="item"></app-product-card>
+    </div>
+  </div>
+
+  <div class="services_section">
+    <div class="services_grid">
+      <div class="service_card">
+        <div class="service_icon"><i class="fa-solid fa-microchip"></i></div>
+        <h3>{{ translationService.translate('TECH_TITLE') }}</h3>
+        <p>{{ translationService.translate('TECH_DESC') }}</p>
+      </div>
+      
+      <div class="service_card">
+        <div class="service_icon"><i class="fa-solid fa-truck-medical"></i></div>
+        <h3>{{ translationService.translate('LOGISTICS_TITLE') }}</h3>
+        <p>{{ translationService.translate('LOGISTICS_DESC') }}</p>
+      </div>
+      
+      <div class="service_card">
+        <div class="service_icon"><i class="fa-solid fa-user-doctor"></i></div>
+        <h3>{{ translationService.translate('SUPPORT_TITLE') }}</h3>
+        <p>{{ translationService.translate('SUPPORT_DESC') }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="support_cta">
+    <div class="cta_content">
+      <h2>{{ translationService.translate('CTA_TITLE') }}</h2>
+      <p>{{ translationService.translate('CTA_DESC') }}</p>
+      <a routerLink="/contact" class="product_btn">
+        {{ translationService.translate('CTA_BTN') }} <span>→</span>
+      </a>
+    </div>
+  </div>
+</div>
