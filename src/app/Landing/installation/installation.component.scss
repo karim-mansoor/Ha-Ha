@@ -1,0 +1,412 @@
+/* Variables */
+$primary-blue: #0A3D62; /* Medical blue */
+$navy-blue: #0B1F2A; /* Navy headings */
+$teal-accent: #2EC4B6; /* Soft teal accent */
+$bg-white: #FFFFFF;
+$bg-offwhite: #F7FAFC;
+$text-muted: #596A7A;
+$shadow-soft: 0 8px 30px rgba(11, 31, 42, 0.05);
+
+/* Base Typography */
+.installation-page {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: $text-muted;
+    background-color: $bg-offwhite;
+    line-height: 1.6;
+
+    h1, h2, h3, h4, h5 {
+        color: $navy-blue;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    p {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 5rem 10%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: $teal-accent;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+    }
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: $primary-blue;
+    color: $bg-white;
+
+    &:hover {
+        background-color: lighten($primary-blue, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(10, 61, 98, 0.2);
+    }
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: $primary-blue;
+    border: 2px solid $primary-blue;
+
+    &:hover {
+        background-color: $primary-blue;
+        color: $bg-white;
+        transform: translateY(-2px);
+    }
+}
+
+/* 1. Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 85vh;
+    padding-top: 8rem; /* Space for fixed header */
+    background: linear-gradient(135deg, $bg-white 0%, $bg-offwhite 100%);
+    gap: 4rem;
+
+    .hero-content {
+        flex: 1;
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: $navy-blue;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: $text-muted;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+
+    .hero-visual {
+        flex: 1;
+        position: relative;
+
+        img {
+            width: 100%;
+            max-width: 650px;
+            border-radius: 16px;
+            box-shadow: $shadow-soft;
+            object-fit: cover;
+            /* Premium placeholder visual */
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid $teal-accent;
+            border-radius: 16px;
+            z-index: -1;
+        }
+    }
+}
+
+/* 2. Service Overview */
+.service-overview {
+    background-color: $primary-blue;
+    color: $bg-white;
+    text-align: center;
+    padding: 6rem 15%;
+
+    h2 {
+        color: $bg-white;
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        font-size: 1.3rem;
+        font-weight: 300;
+        line-height: 1.8;
+        opacity: 0.9;
+    }
+}
+
+/* Common Card Grid Style */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* 3. What This Service Includes & 6. Why Matters */
+.includes-section, .why-matters-section {
+    background-color: $bg-white;
+
+    .service-card {
+        background: $bg-white;
+        border: 1px solid rgba(11, 31, 42, 0.05);
+        border-radius: 12px;
+        padding: 2.5rem 2rem;
+        box-shadow: $shadow-soft;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(11, 31, 42, 0.1);
+        }
+
+        i {
+            font-size: 2.5rem;
+            color: $teal-accent;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: $text-muted;
+        }
+    }
+}
+
+/* 4. Who This Service Is For */
+.who-is-for-section {
+    background-color: $bg-offwhite;
+
+    .facility-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+
+        .facility-card {
+            background: $bg-white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: $shadow-soft;
+            border-bottom: 4px solid $teal-accent;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+
+            i {
+                font-size: 3rem;
+                color: $primary-blue;
+                margin-bottom: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}
+
+/* 5. Installation Process */
+.process-section {
+    background-color: $bg-white;
+
+    .process-timeline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(46, 196, 182, 0.3);
+            z-index: 1;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 1rem;
+
+            .step-number {
+                width: 80px;
+                height: 80px;
+                margin: 0 auto 1.5rem;
+                background-color: $bg-white;
+                border: 2px solid $teal-accent;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $primary-blue;
+                box-shadow: 0 4px 15px rgba(46, 196, 182, 0.1);
+            }
+
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+/* 7. Support / Trust Section */
+.support-section {
+    background-color: $navy-blue;
+    color: $bg-white;
+    text-align: center;
+    padding: 5rem 10%;
+
+    .trust-icons {
+        display: flex;
+        justify-content: center;
+        gap: 4rem;
+        margin-top: 3rem;
+
+        .trust-item {
+            i {
+                font-size: 3rem;
+                color: $teal-accent;
+                margin-bottom: 1rem;
+            }
+            h4 {
+                color: $bg-white;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+/* 8. Final CTA Section */
+.final-cta {
+    position: relative;
+    padding: 8rem 10%;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(11, 31, 42, 0.85); /* Navy overlay */
+        z-index: 1;
+    }
+
+    .cta-content {
+        position: relative;
+        z-index: 2;
+        color: $bg-white;
+        max-width: 800px;
+        margin: 0 auto;
+
+        h2 {
+            color: $bg-white;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+
+            .btn-secondary {
+                border-color: $bg-white;
+                color: $bg-white;
+
+                &:hover {
+                    background-color: $bg-white;
+                    color: $navy-blue;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .installation-page {
+        section { padding: 4rem 5%; }
+        
+        .hero-section {
+            flex-direction: column;
+            text-align: center;
+            padding-top: 6rem;
+            
+            .hero-ctas {
+                justify-content: center;
+            }
+        }
+
+        .process-section .process-timeline {
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            
+            &::before {
+                top: 0; left: 50%;
+                width: 2px; height: 100%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .who-is-for-section .facility-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .installation-page {
+        .hero-section .hero-content h1 { font-size: 2.5rem; }
+        .who-is-for-section .facility-grid { grid-template-columns: 1fr; }
+        .support-section .trust-icons { flex-direction: column; gap: 2rem; }
+        .final-cta .cta-content .cta-buttons { flex-direction: column; }
+    }
+}
