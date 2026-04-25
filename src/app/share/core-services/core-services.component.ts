@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { TranslationServiceService } from '../../core/Lang/translation-service.service';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-core-services',
   standalone: true,
-  imports: [RouterLink],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  templateUrl: './core-services.component.html',
+  styleUrl: './core-services.component.scss'
 })
-export class HeroComponent {
+export class CoreServicesComponent {
     constructor(public translationService: TranslationServiceService) {}
 }

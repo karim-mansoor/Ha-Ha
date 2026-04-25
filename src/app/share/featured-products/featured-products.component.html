@@ -1,0 +1,18 @@
+<section class="featured-products bg-offwhite">
+    <div class="container">
+      <div class="products-intro">
+        <h2 class="section-title">{{ translationService.translate('FEAT_PROD_TITLE') }}</h2>
+        <p class="lead-text">
+          {{ translationService.translate('FEAT_PROD_DESC') }}
+        </p>
+      </div>
+
+      <div class="discounted_products_cards">
+        <app-product-card *ngFor="let item of devices" [device]="item"></app-product-card>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a routerLink="/products" class="btn btn-outline">{{ translationService.translate('FEAT_PROD_BTN') }}</a>
+      </div>
+    </div>
+</section>

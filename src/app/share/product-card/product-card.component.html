@@ -1,23 +1,36 @@
-
-<div class="card_container" >
+<div class="card_container">
     <div class="product_image">
-        <span class="discount_badge">40% Off</span>
-       <img [src]="Api + device.images" [alt]="device.name">
+        <img [src]="Api + device.images" [alt]="device.name">
     </div>
-
 
     <div class="product_details">
         <h3 class="product_name">
-            {{device.name}} <br>
-
+            {{device.name}}
         </h3>
 
-        <div class="product_price">
-            <span class="price_new">{{device.price}}€</span>
-            <span class="price_old">{{device.price * 1.5}}</span>
-        </div>
-       
-        <button class="add_to_cart" (click)="onContactClick()">Contact _US</button>
+        <p class="product_description">{{device.description || 'No description available for this device.'}}</p>
+
+        <button class="add_to_cart" (click)="toggleModal()">
+            View Details <span class="arrow">→</span>
+        </button>
     </div>
 </div>
 
+<!-- The Modal -->
+<div class="modal_overlay" *ngIf="isModalOpen" (click)="toggleModal()">
+    <div class="modal_content" (click)="$event.stopPropagation()">
+        <button class="close_btn" (click)="toggleModal()">&times;</button>
+        <div class="modal_body">
+            <div class="modal_image">
+                <img [src]="Api + device.images" [alt]="device.name">
+            </div>
+            <div class="modal_info">
+                <h2>{{device.name}}</h2>
+                <div class="modal_description">{{device.description}}</div>
+                <button class="contact_btn" (click)="onContactClick()">
+                    Submit Inquiry <span class="arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

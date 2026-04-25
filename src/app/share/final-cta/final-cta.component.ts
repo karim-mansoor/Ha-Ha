@@ -3,12 +3,12 @@ import { RouterLink } from '@angular/router';
 import { TranslationServiceService } from '../../core/Lang/translation-service.service';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-final-cta',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  templateUrl: './final-cta.component.html',
+  styleUrl: './final-cta.component.scss'
 })
-export class HeroComponent {
+export class FinalCtaComponent {
     constructor(public translationService: TranslationServiceService) {}
 }

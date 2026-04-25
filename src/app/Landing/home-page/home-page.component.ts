@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { HeroComponent } from '../../share/hero/hero.component';
-import { ProductCardComponent } from '../../share/product-card/product-card.component';
-import { RouterLink } from '@angular/router';
+import { WhoWeAreComponent } from '../../share/who-we-are/who-we-are.component';
+import { CoreServicesComponent } from '../../share/core-services/core-services.component';
+import { FeaturedProductsComponent } from '../../share/featured-products/featured-products.component';
+import { ReplacementPartsComponent } from '../../share/replacement-parts/replacement-parts.component';
+import { HowWeWorkComponent } from '../../share/how-we-work/how-we-work.component';
+import { WhyChooseUsComponent } from '../../share/why-choose-us/why-choose-us.component';
+import { FinalCtaComponent } from '../../share/final-cta/final-cta.component';
 import { Device } from '../../core/models/device.model';
-import { NgForOf, AsyncPipe } from '@angular/common';
 import { environment } from '../../core/Env/Environment.API';
 import { TranslationServiceService } from '../../core/Lang/translation-service.service';
 import { HttpClient } from '@angular/common/http';
@@ -11,9 +15,19 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [HeroComponent, ProductCardComponent, RouterLink, NgForOf, ],
+  imports: [
+    HeroComponent,
+    WhoWeAreComponent,
+    CoreServicesComponent,
+    FeaturedProductsComponent,
+    ReplacementPartsComponent,
+    HowWeWorkComponent,
+    WhyChooseUsComponent,
+    FinalCtaComponent
+  ],
   templateUrl: './home-page.component.html',
-  styleUrl: './home-page.component.scss'
+  styleUrl: './home-page.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class HomePageComponent implements OnInit {
   DiscountedDevices: Device[] = [];

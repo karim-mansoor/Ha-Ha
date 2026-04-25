@@ -10,7 +10,7 @@ import { NgIf } from '@angular/common'; // Important for *ngIf
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
+  imports: [NgIf],
   templateUrl: './product-card.component.html',
   styleUrl: './product-card.component.scss'
 })

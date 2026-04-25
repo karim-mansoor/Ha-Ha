@@ -3,12 +3,12 @@ import { RouterLink } from '@angular/router';
 import { TranslationServiceService } from '../../core/Lang/translation-service.service';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-replacement-parts',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  templateUrl: './replacement-parts.component.html',
+  styleUrl: './replacement-parts.component.scss'
 })
-export class HeroComponent {
+export class ReplacementPartsComponent {
     constructor(public translationService: TranslationServiceService) {}
 }

@@ -28,8 +28,7 @@ import { HttpClient } from '@angular/common/http';
   ],
   styleUrl: './products.component.scss'
 })
-export class ProductsComponent implements OnInit
-{
+export class ProductsComponent implements OnInit {
   devicesList: Device[] = [];
   categories: string[] = [];
   companies: string[] = [];
@@ -39,85 +38,80 @@ export class ProductsComponent implements OnInit
   searchQuery: string = '';
   currentPage: number = 1;
   itemsPerPage: number = 4;
-  constructor( private http: HttpClient, public translationService: TranslationServiceService) {}
-  get Api()
-  {
+  constructor(private http: HttpClient, public translationService: TranslationServiceService) { }
+  get Api() {
     return `${environment.Api}/devices`
   }
-  ngOnInit(): void 
-  {
+  ngOnInit(): void {
     this.fetchDevices();
   }
 
-fetchDevices() {
- this.http.get<any>(this.Api).subscribe({
-  next: (res)=>
-  {
-    const data:Device[]=res.data||res;
-    this.devicesList =data; 
-      this.categories = Array.from(
-        new Set(this.devicesList.map((d: Device) => d.category?.name))
-      ).filter(c => !!c) as string[];
-      this.companies = Array.from(
-        new Set(this.devicesList.map((d:Device) => d.company?.name))
-      ).filter(c => !!c)as string[];
+  fetchDevices() {
+    this.http.get<any>(this.Api).subscribe({
+      next: (res) => {
+        const data: Device[] = res.data || res;
+        this.devicesList = data;
+        this.categories = Array.from(
+          new Set(this.devicesList.map((d: Device) => d.category?.name))
+        ).filter(c => !!c) as string[];
+        this.companies = Array.from(
+          new Set(this.devicesList.map((d: Device) => d.company?.name))
+        ).filter(c => !!c) as string[];
+        console.log(this.devicesList);
+      }
+
+    })
+
   }
-     
- }) 
+  // 1. Add the search method
 
-}
-// 1. Add the search method
+  onSearch(): void {
+    // Reset to first page so the user doesn't stay on a page that might no longer exist
+    this.currentPage = 1;
 
-onSearch(): void {
-  // Reset to first page so the user doesn't stay on a page that might no longer exist
-  this.currentPage = 1;
+    if (this.searchQuery.trim() === '') {
+      // If search is cleared, just let the standard filters handle it
+      return;
+    }
 
-  if (this.searchQuery.trim() === '') {
-    // If search is cleared, just let the standard filters handle it
-    return;
+    // Optional: If you want to search via Backend specifically for the search bar:
+    /*
+    this.deviceService.getDeviceByName(this.searchQuery).subscribe({
+      next: (device) => { this.devicesList = [device]; },
+      error: (err) => { console.error("Device not found", err); }
+    });
+    */
   }
 
-  // Optional: If you want to search via Backend specifically for the search bar:
-  /*
-  this.deviceService.getDeviceByName(this.searchQuery).subscribe({
-    next: (device) => { this.devicesList = [device]; },
-    error: (err) => { console.error("Device not found", err); }
-  });
-  */
-}
-  
-get filteredDevices(): Device[] {
-  if (!this.devicesList) return [];
+  get filteredDevices(): Device[] {
+    if (!this.devicesList) return [];
 
-  return this.devicesList.filter(device => {
-    const categoryMatch = this.selectedCategory === 'all' || 
-                         device.category?.name === this.selectedCategory;
-                         
-    const companyMatch = this.selectedcompany === 'all' || 
-                        device.company?.name === this.selectedcompany;
+    return this.devicesList.filter(device => {
+      const categoryMatch = this.selectedCategory === 'all' ||
+        device.category?.name === this.selectedCategory;
 
-    const searchMatch = !this.searchQuery || 
-                        device.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-                        device.description?.toLowerCase().includes(this.searchQuery.toLowerCase());
+      const companyMatch = this.selectedcompany === 'all' ||
+        device.company?.name === this.selectedcompany;
 
-    return categoryMatch && companyMatch && searchMatch;
-  });
-}
-get filteredcomapny(): Device[]
-{
-  if (!this.devicesList|| this.devicesList.length==0)
-    return [];
+      const searchMatch = !this.searchQuery ||
+        device.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        device.description?.toLowerCase().includes(this.searchQuery.toLowerCase());
 
-  if(this.selectedcompany==='all')
-  {
-    return this.devicesList;
+      return categoryMatch && companyMatch && searchMatch;
+    });
   }
-  return this.devicesList.filter((device: Device)=> 
-  {
-    return device.company?.name === this.selectedcompany;
-  });
+  get filteredcomapny(): Device[] {
+    if (!this.devicesList || this.devicesList.length == 0)
+      return [];
 
-}
+    if (this.selectedcompany === 'all') {
+      return this.devicesList;
+    }
+    return this.devicesList.filter((device: Device) => {
+      return device.company?.name === this.selectedcompany;
+    });
+
+  }
 
 
 
@@ -146,15 +140,15 @@ get filteredcomapny(): Device[]
     if (this.currentPage > 1) this.currentPage--;
   }
 
-  gridMode: '4x4' | '2x2' = '4x4'; 
+  gridMode: '4x4' | '2x2' = '4x4';
 
-isFullGrid: boolean = true; // true = 16 items (4x4), false = 4 items (2x2)
+  isFullGrid: boolean = true; // true = 16 items (4x4), false = 4 items (2x2)
 
-toggleGrid() {
-  this.isFullGrid = !this.isFullGrid;
-  // this.itemsPerPage = this.isFullGrid ? 16 : 4; 
-  this.currentPage = 1;
-}
+  toggleGrid() {
+    this.isFullGrid = !this.isFullGrid;
+    // this.itemsPerPage = this.isFullGrid ? 16 : 4; 
+    this.currentPage = 1;
+  }
 
 
 }

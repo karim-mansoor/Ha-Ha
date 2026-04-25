@@ -1,328 +1,457 @@
-.container {
-  width: 100%;
-  margin: 0 auto;
-}
+/* ==========================================================================
+   HOMEPAGE PREMIUM B2B DESIGN SYSTEM
+   Theme: Professional, Technical, Healthcare, Corporate, Trustworthy
+   ========================================================================== */
 
-/* ---------------- HERO CONTAINER ---------------- */
-.hero_contaner {
-  width: 100%;
-  margin: 0 auto;
-  background-color: rgba(255, 255, 255, 0.5);
-}
+$primary-navy: #0B1F2A;
+$primary-medical: #0A3D62;
+$accent-teal: #2EC4B6;
+$bg-white: #FFFFFF;
+$bg-offwhite: #F7FAFC;
+$text-body: #4A5D6A;
+$shadow-soft: 0 10px 30px rgba(11, 31, 42, 0.05);
+$shadow-hover: 0 15px 40px rgba(10, 61, 98, 0.12);
 
+.homepage-container {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: $text-body;
+  background-color: $bg-white;
+  line-height: 1.6;
 
+  * { box-sizing: border-box; }
 
+  /* Utility Classes */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
 
-/* ---------------- DISCOUNTED PRODUCTS ---------------- */
-.discounted_products {
-  margin-top: 1.5%;
-  display: block;
-}
-
-.first_product_grid {
-  display: flex;
-  width: 70%;
-  margin: 0 auto;
-  padding-top: 125px;
-  margin-bottom: 1.5%;
-}
-
-.discount_text {
-  font-size: 28px;
-  font-weight: 700;
-  color: #0a2c3d;
-  margin-right: auto;
-  align-self: center;
-  margin-top: 10px;
-}
-
-/* ---------------- BUTTON ---------------- */
-.product_btn {
-  height: 54px;
-  padding: 0 30px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  font-size: 14px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-decoration: none;
-
-  border: 1px solid #071c1f;
-  background: transparent;
-  color: #071c1f;
-
-  margin-left: auto;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.product_btn span {
-  font-size: 20px;
-  line-height: 0;
-  transition: transform 0.25s ease;
-}
-
-.product_btn:hover {
-  background-color: #071c1f;
-  color: #fff;
-}
-
-.product_btn:hover span {
-  transform: translateX(5px);
-}
-
-/* ---------------- PRODUCT GRID ---------------- */
-.discounted_products_cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  width: 70%;
-  margin: 0 auto 3%;
-  padding-bottom: 30px;
-}
-
-// /* ✅ RESPONSIVE GRID — SAME DESIGN, JUST ADAPTS */
-// @media (max-width: 1200px) {
-//   .discounted_products_cards {
-//     grid-template-columns: repeat(3, 1fr);
-//     width: 90%;
-//   }
-
-//   .first_product_grid {
-//     width: 90%;
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .discounted_products_cards {
-//     grid-template-columns: repeat(2, 1fr);
-//   }
-// }
-
-// @media (max-width: 480px) {
-//   .discounted_products_cards {
-//     grid-template-columns: 1fr;
-//   }
-// }
-
-// /* ---------------- CONTACT ---------------- */
-// .contact_us {
-//   // margin: 3% 0;
-//   background-color: rgba(255, 255, 255, 0.5);
-//   width: 100%;
-//   // margin: 0 auto;
-// }
-// .contact_us_card
-// {
-//   width: 70%;
-//   margin: 0 auto;
-//   // background-color: #071c1f;
-// }
-// /* ✅ RESPONSIVE FIX — THIS WAS THE GOAL */
-// @media (max-width: 1200px) {
-//   .hero_contaner {
-//     max-width: 1100px;
-//     padding: 0 20px;
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .hero_contaner {
-//     max-width: 100%;
-//     padding: 0 16px;
-//   }
-// }
-// service section 
-.services_section 
-{
-  padding: 80px 0;
-  background-color: #f8fbff; /* Match your hero color */
-  width: 70%;
-  margin: 0 auto ;
-
-}
-.services_grid 
-{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 70%;
-  margin: 0 auto;
-  gap: 30px;
-}
-.service_card 
-{
-  text-align: center;
-  padding: 40px 25px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-}
-.service_card:hover 
-{
-   transform: translateY(-10px); 
-
-}
-.service_icon {
-  font-size: 40px;
-  color: #2dbccb; /* Your accent teal */
-  margin-bottom: 20px;
-}
-.service_card h3 { color: #0a2c3d; margin-bottom: 15px; }
-.service_card p { color: #4A5D6A; line-height: 1.6; }
-
-
-
-// -------------------------------------------
-// 
-.support_cta {
-  width: 70%;
-  max-width: 1200px;
-  margin: 80px auto;
-  // Deep medical teal gradient from your image
-  background: linear-gradient(180deg, #0a5d71 0%, #1e90a8 100%);
-  padding: 80px 40px;
-  border-radius: 30px; // Smooth rounded corners
-  color: white;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 20px 40px rgba(10, 93, 113, 0.2);
-
-  h2 {
-    font-size: 48px;
+  .text-center { text-align: center; }
+  .text-white { color: $bg-white !important; }
+  .mt-3 { margin-top: 1.5rem; }
+  .mt-4 { margin-top: 3rem; }
+  .justify-center { justify-content: center; }
+  .bg-offwhite { background-color: $bg-offwhite; }
+  .bg-navy { background-color: $primary-navy; }
+  
+  .section-title {
+    font-size: 2.5rem;
     font-weight: 800;
-    margin-bottom: 25px;
-    line-height: 1.2;
-    max-width: 600px;
+    color: $primary-navy;
+    margin-bottom: 2rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: $accent-teal;
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
   }
 
-  p {
-    font-size: 22px;
-    opacity: 0.9;
-    margin-bottom: 40px;
-    max-width: 500px;
-    line-height: 1.5;
+  .lead-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
   }
 
-  /* Fixed Contact Button to match screenshot */
-  .contact_expert_btn {
-    background: #ffffff;
-    color: #0d233e; // Dark navy text
-    padding: 20px 40px;
-    border-radius: 4px; // Sharp professional corners or slight radius
-    text-decoration: none;
+  section {
+    padding: 6rem 0;
+  }
+
+  /* BUTTONS */
+  .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    font-weight: 700;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    gap: 0.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
     transition: all 0.3s ease;
-    border: none;
-    min-width: 280px;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
 
-    span {
-      font-size: 24px;
-      transition: transform 0.3s ease;
-    }
+  .btn-primary {
+    background-color: $primary-medical;
+    color: $bg-white;
+    box-shadow: 0 4px 15px rgba(10, 61, 98, 0.2);
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-      
-      span {
-        transform: translateX(8px);
+      background-color: lighten($primary-medical, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(10, 61, 98, 0.3);
+    }
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: $primary-medical;
+    border-color: $primary-medical;
+
+    &:hover {
+      background-color: $primary-medical;
+      color: $bg-white;
+    }
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: $primary-navy;
+    border-color: rgba(11, 31, 42, 0.2);
+
+    &:hover {
+      border-color: $primary-navy;
+      color: $primary-medical;
+    }
+  }
+
+  /* 1. HERO SECTION */
+  .hero-section {
+    position: relative;
+    padding: 10rem 5% 8rem;
+    background: linear-gradient(135deg, $bg-white 0%, $bg-offwhite 100%);
+    overflow: hidden;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -10%;
+      top: -10%;
+      width: 50%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(46,196,182,0.08) 0%, rgba(255,255,255,0) 70%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        color: $primary-navy;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        letter-spacing: -1px;
+      }
+
+      .subtitle {
+        font-size: 1.25rem;
+        color: $text-body;
+        margin-bottom: 2.5rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
       }
     }
   }
-}
 
-// ---------------------------------
-/* ===================================================
-   MOBILE & TABLET RESPONSIVENESS
-   =================================================== */
+  /* 2. WHO WE ARE */
+  .who-we-are {
+    background-color: $bg-white;
+    .section-title::after { margin: 1rem auto; }
+  }
 
-@media (max-width: 768px) {
-  .services_grid { grid-template-columns: 1fr; width: 90%; }
-}
+  /* 3. CORE SERVICES */
+  .core-services {
+    background-color: $bg-offwhite;
 
-/* Tablet & Smaller Laptops */
-@media (max-width: 1200px) {
-    .first_product_grid, 
-    .discounted_products_cards {
-        width: 90%; /* Expand width to use more screen space */
-    }
-}
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
 
-/* Tablets & Large Phones */
-@media (max-width: 768px) {
-    .first_product_grid {
-        padding-top: 60px; /* Reduce large gap at the top */
-        flex-direction: column; /* Stack text and button */
-        gap: 20px;
-        text-align: center;
-    }
+      .service-card {
+        background: $bg-white;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        box-shadow: $shadow-soft;
+        border: 1px solid rgba(0,0,0,0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    .discount_text {
-        margin-right: 0;
-        font-size: 24px;
-    }
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: $shadow-hover;
+        }
 
-    .product_btn {
-        margin-left: 0; 
-        width: 100%;    
-        text-align: center;
-    }
+        i {
+          font-size: 2.5rem;
+          color: $accent-teal;
+          margin-bottom: 1.5rem;
+        }
 
-    .discounted_products_cards {
-        grid-template-columns: repeat(2, 1fr); /* 2 products per row */
-        width: 95%;
-        gap: 15px;
-    }
-    .support_cta {
-    width: 95%;
-    padding: 60px 20px;
-    margin: 40px auto;
-    border-radius: 20px;
+        h3 {
+          font-size: 1.4rem;
+          color: $primary-navy;
+          margin-bottom: 1rem;
+          font-weight: 700;
+        }
 
-    h2 {
-      font-size: 32px;
-    }
-
-    p {
-      font-size: 18px;
-    }
-
-    .contact_expert_btn {
-      width: 100%; // Full width on mobile for better touch target
-      padding: 18px 20px;
-      font-size: 16px;
-      flex-direction: row; // Keeps arrow on the side
-      justify-content: space-between; // Space between text and arrow
+        p {
+          font-size: 1rem;
+          margin: 0;
+        }
+      }
     }
   }
-}
 
-/* Small Phones */
-@media (max-width: 480px) {
-    .discount_text {
-        font-size: 22px;
-    }
-
+  /* 4. FEATURED PRODUCTS */
+  .featured-products {
     .discounted_products_cards {
-        grid-template-columns: 1fr; /* 1 product per row for clarity */
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 3rem;
+    }
+  }
+
+  /* 5. REPLACEMENT PARTS */
+  .replacement-parts {
+    background-color: $primary-medical;
+    color: $bg-white;
+    
+    .split-layout {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+
+      .split-text {
+        flex: 1;
+
+        h2 {
+          font-size: 2.5rem;
+          font-weight: 800;
+          color: $bg-white;
+          margin-bottom: 1.5rem;
+        }
+
+        p {
+          font-size: 1.15rem;
+          opacity: 0.9;
+          margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+          background-color: $bg-white;
+          color: $primary-medical;
+
+          &:hover {
+            background-color: $accent-teal;
+            color: $bg-white;
+            box-shadow: none;
+          }
+        }
+      }
+
+      .split-visual {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        .tech-graphic {
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          background: rgba(255,255,255,0.05);
+          border: 1px dashed rgba(255,255,255,0.2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          i {
+            font-size: 6rem;
+            color: $accent-teal;
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+
+  /* 6. HOW WE WORK */
+  .how-we-work {
+    background-color: $bg-white;
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+      position: relative;
+
+      /* Horizontal line connecting steps */
+      &::before {
+        content: '';
+        position: absolute;
+        top: 30px;
+        left: 5%;
+        right: 5%;
+        height: 2px;
+        background: rgba(10, 61, 98, 0.1);
+        z-index: 0;
+      }
+
+      .step-item {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+
+        .step-num {
+          width: 60px;
+          height: 60px;
+          margin: 0 auto 1.5rem;
+          background: $bg-white;
+          border: 2px solid $primary-medical;
+          color: $primary-medical;
+          font-weight: 800;
+          font-size: 1.5rem;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: $shadow-soft;
+        }
+
+        h4 {
+          color: $primary-navy;
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        
+        p { font-size: 0.95rem; }
+      }
+    }
+  }
+
+  /* 7. WHY CHOOSE US */
+  .why-choose-us {
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+
+      .trust-card {
+        text-align: center;
+
+        i {
+          font-size: 3rem;
+          color: $accent-teal;
+          margin-bottom: 1.5rem;
+        }
+
+        h4 {
+          color: $bg-white;
+          font-size: 1.25rem;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          color: rgba(255,255,255,0.7);
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+
+  /* 8. FINAL CTA */
+  .final-cta {
+    position: relative;
+    padding: 8rem 0;
+    // Abstract geometric gradient background for tech feel
+    background: linear-gradient(135deg, $primary-navy 0%, $primary-medical 100%);
+    overflow: hidden;
+
+    .cta-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at center, transparent 0%, rgba(11,31,42,0.8) 100%);
     }
 
-    .first_product_grid {
-        padding-top: 40px;
+    .cta-content {
+      position: relative;
+      z-index: 1;
+
+      h2 {
+        font-size: 3rem;
+        font-weight: 800;
+        color: $bg-white;
+        margin-bottom: 1.5rem;
+      }
+      
+      .btn-secondary {
+        border-color: $bg-white;
+        color: $bg-white;
+        &:hover {
+          background: $bg-white;
+          color: $primary-navy;
+        }
+      }
     }
+  }
+
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 1200px) {
+    .featured-products .discounted_products_cards {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .how-we-work .process-steps {
+      grid-template-columns: repeat(3, 1fr);
+      &::before { display: none; }
+    }
+    .why-choose-us .trust-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero-section .hero-content h1 { font-size: 3rem; }
+    .replacement-parts .split-layout {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-ctas { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
+  }
+
+  @media (max-width: 768px) {
+    .featured-products .discounted_products_cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .core-services .services-grid {
+      grid-template-columns: 1fr;
+    }
+    .how-we-work .process-steps {
+      grid-template-columns: 1fr;
+    }
+    .why-choose-us .trust-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .featured-products .discounted_products_cards {
+      grid-template-columns: 1fr;
+    }
+    .hero-section .hero-content h1 { font-size: 2.2rem; }
+  }
 }
